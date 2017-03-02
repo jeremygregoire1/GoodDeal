@@ -122,13 +122,14 @@ function getMAEstimation( lbcData, routeResponse ) {
     }
 }
 
+
 function isGoodDeal( lbcData, maData ) {
 
     const adPricePerSqM = Math.round( lbcData.price / lbcData.surface )
 
     const maPrice = lbcData.type === 'appartement' ? maData.priceAppart : maData.priceHouse
 
-    return adPricePerSqM 
+    return adPricePerSqM < maPrice
 
 }
 
